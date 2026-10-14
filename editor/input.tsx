@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import useInput from "./use-editor";
 import { Editor, EditorContent } from "@tiptap/react";
 import { TableOfContentData } from "@tiptap/extension-table-of-contents";
+import { cn } from "cn";
 
 interface InputProps {
   autoFocus?: boolean;
@@ -15,6 +16,7 @@ interface InputProps {
   parseMath?: boolean;
   placeholder?: string;
   limit?: number;
+  className?: string;
   getEditor?: (editor: Editor | null) => void;
   getHtml?: (html?: string) => void;
   getText?: (text?: string) => void;
@@ -43,5 +45,5 @@ export default function Input(props: InputProps) {
 
   if (!editor) return null;
 
-  return <EditorContent editor={editor} />;
+  return <EditorContent editor={editor} className={cn(props.className)} />;
 }

@@ -5,7 +5,7 @@ import renderMathInElement from "./helpers/auto-render";
 
 import { cn } from "@/lib/utils";
 
-function RenderContent({
+function Render({
   html,
   className = "",
 }: {
@@ -39,4 +39,4 @@ function RenderContent({
   );
 }
 
-export default RenderContent;
+export default Render;
